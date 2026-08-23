@@ -1,0 +1,31 @@
+# OS files
+.DS_Store
+Thumbs.db
+._*
+
+# PlatformIO
+.pio/
+**/.pio/
+*.bin
+*.elf
+*.hex
+
+# Build & CMake outputs
+build/
+bin/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# IDEs & Workspaces
+.vscode/
+.idea/
+*.code-workspace
+*.suo
+*.user
+*.userosv
+*.sln
+*.vcxproj
