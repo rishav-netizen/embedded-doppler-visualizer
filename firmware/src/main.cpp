@@ -11,7 +11,7 @@ void setup()
 
   pinMode(xPin, INPUT);
   pinMode(yPin, INPUT);
-  pinMode(switchPin, INPUT_PULLUP);
+  pinMode(switchPin, INPUT_PULLUP); //cuz the switch is high when not pressed
 
 }
 
