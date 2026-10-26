@@ -29,3 +29,7 @@ compile_commands.json
 *.userosv
 *.sln
 *.vcxproj
+
+#folders
+assets/
+presentation/

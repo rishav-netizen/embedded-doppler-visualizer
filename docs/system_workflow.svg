@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="hwGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="mcuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="commGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="oopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="gfxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowPurple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#c084fc"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="360" rx="16" fill="url(#bgGrad)"/>
+  <rect x="1" y="1" width="998" height="358" rx="15" fill="none" stroke="#334155" stroke-width="1.5"/>
+
+  <!-- Stage Titles -->
+  <text x="500" y="32" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="1.5" text-anchor="middle">END-TO-END HARDWARE-TO-RENDER PIPELINE ARCHITECTURE</text>
+
+  <!-- Step 1: KY-023 Joystick -->
+  <g transform="translate(25, 55)" filter="url(#cardShadow)">
+    <rect width="165" height="235" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect width="165" height="38" rx="12" fill="url(#hwGrad)"/>
+    <rect x="0" y="24" width="165" height="14" fill="url(#hwGrad)"/>
+    <text x="82" y="24" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">1. Physical Input</text>
+    
+    <text x="15" y="65" fill="#38bdf8" font-family="monospace" font-size="11" font-weight="bold">KY-023 Joystick</text>
+    <text x="15" y="85" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• 2-Axis Potentiometer</text>
+    <text x="15" y="102" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• Dual 10kΩ wipers</text>
+    <text x="15" y="119" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• Push switch (SW)</text>
+    
+    <line x1="15" y1="135" x2="150" y2="135" stroke="#334155" stroke-width="1"/>
+    
+    <text x="15" y="155" fill="#facc15" font-family="monospace" font-size="9">Signals Out:</text>
+    <text x="15" y="172" fill="#94a3b8" font-family="monospace" font-size="9">VRX: Analog 0-5V</text>
+    <text x="15" y="187" fill="#94a3b8" font-family="monospace" font-size="9">VRY: Analog 0-5V</text>
+    <text x="15" y="202" fill="#94a3b8" font-family="monospace" font-size="9">SW:  Digital (LOW)</text>
+    <text x="82" y="225" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle" font-style="italic">Deflection = Velocity</text>
+  </g>
+
+  <!-- Arrow 1 to 2 -->
+  <path d="M 190 172 L 217 172" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="204" y="160" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">Analog</text>
+
+  <!-- Step 2: ATmega328P Firmware -->
+  <g transform="translate(225, 55)" filter="url(#cardShadow)">
+    <rect width="165" height="235" rx="12" fill="#1e293b" stroke="#2dd4bf" stroke-width="1.5"/>
+    <rect width="165" height="38" rx="12" fill="url(#mcuGrad)"/>
+    <rect x="0" y="24" width="165" height="14" fill="url(#mcuGrad)"/>
+    <text x="82" y="24" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">2. MCU Sampling</text>
+    
+    <text x="15" y="65" fill="#2dd4bf" font-family="monospace" font-size="11" font-weight="bold">Arduino Uno Firmware</text>
+    <text x="15" y="85" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• 10-bit ADC (A0, A1)</text>
+    <text x="15" y="102" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• Range: [0, 1023]</text>
+    <text x="15" y="119" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• SW on D2 (Pullup)</text>
+    
+    <line x1="15" y1="135" x2="150" y2="135" stroke="#334155" stroke-width="1"/>
+    
+    <text x="15" y="155" fill="#facc15" font-family="monospace" font-size="9">Processing:</text>
+    <text x="15" y="172" fill="#94a3b8" font-family="monospace" font-size="9">Fixed 60 Hz pacing</text>
+    <text x="15" y="187" fill="#94a3b8" font-family="monospace" font-size="9">CSV string assembly</text>
+    <text x="15" y="202" fill="#94a3b8" font-family="monospace" font-size="9">"X,Y,SW
+"</text>
+    <text x="82" y="225" fill="#2dd4bf" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle" font-style="italic">115,200 Baud UART</text>
+  </g>
+
+  <!-- Arrow 2 to 3 -->
+  <path d="M 390 172 L 417 172" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="404" y="160" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">USB</text>
+
+  <!-- Step 3: Serial Worker Thread -->
+  <g transform="translate(425, 55)" filter="url(#cardShadow)">
+    <rect width="165" height="235" rx="12" fill="#1e293b" stroke="#c084fc" stroke-width="1.5"/>
+    <rect width="165" height="38" rx="12" fill="url(#commGrad)"/>
+    <rect x="0" y="24" width="165" height="14" fill="url(#commGrad)"/>
+    <text x="82" y="24" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">3. Thread Ingestion</text>
+    
+    <text x="15" y="65" fill="#c084fc" font-family="monospace" font-size="11" font-weight="bold">POSIX Serial Worker</text>
+    <text x="15" y="85" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• Background thread</text>
+    <text x="15" y="102" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• Non-blocking ring read</text>
+    <text x="15" y="119" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• Deadband filtering</text>
+    
+    <line x1="15" y1="135" x2="150" y2="135" stroke="#334155" stroke-width="1"/>
+    
+    <text x="15" y="155" fill="#facc15" font-family="monospace" font-size="9">Deadband Logic:</text>
+    <text x="15" y="172" fill="#94a3b8" font-family="monospace" font-size="9">|raw - 512| &lt; 25 -&gt; 0</text>
+    <text x="15" y="187" fill="#94a3b8" font-family="monospace" font-size="9">Scale to [-1.0, +1.0]</text>
+    <text x="15" y="202" fill="#94a3b8" font-family="monospace" font-size="9">Atomic state write</text>
+    <text x="82" y="225" fill="#c084fc" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle" font-style="italic">Lock-Free std::atomic</text>
+  </g>
+
+  <!-- Arrow 3 to 4 -->
+  <path d="M 590 172 L 617 172" stroke="#c084fc" stroke-width="2.5" marker-end="url(#arrowPurple)"/>
+  <text x="604" y="160" fill="#c084fc" font-family="monospace" font-size="8" text-anchor="middle">Atomic</text>
+
+  <!-- Step 4: OOP Physics Model -->
+  <g transform="translate(625, 55)" filter="url(#cardShadow)">
+    <rect width="165" height="235" rx="12" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect width="165" height="38" rx="12" fill="url(#oopGrad)"/>
+    <rect x="0" y="24" width="165" height="14" fill="url(#oopGrad)"/>
+    <text x="82" y="24" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">4. OOP Physics</text>
+    
+    <text x="15" y="65" fill="#fbbf24" font-family="monospace" font-size="11" font-weight="bold">Kinematic Model</text>
+    <text x="15" y="85" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• AcousticSource entity</text>
+    <text x="15" y="102" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• Pos: x(t) = x + v·dt</text>
+    <text x="15" y="119" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• Mach: M = |v| / c</text>
+    
+    <line x1="15" y1="135" x2="150" y2="135" stroke="#334155" stroke-width="1"/>
+    
+    <text x="15" y="155" fill="#facc15" font-family="monospace" font-size="9">Wave Pool Manager:</text>
+    <text x="15" y="172" fill="#94a3b8" font-family="monospace" font-size="9">Emit at rate f_emit</text>
+    <text x="15" y="187" fill="#94a3b8" font-family="monospace" font-size="9">R_k(t) = c · (t - t_k)</text>
+    <text x="15" y="202" fill="#94a3b8" font-family="monospace" font-size="9">Screen bound culling</text>
+    <text x="82" y="225" fill="#fbbf24" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle" font-style="italic">O(1) Ring Allocation</text>
+  </g>
+
+  <!-- Arrow 4 to 5 -->
+  <path d="M 790 172 L 817 172" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="804" y="160" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">GPU</text>
+
+  <!-- Step 5: Raylib GPU Rendering -->
+  <g transform="translate(825, 55)" filter="url(#cardShadow)">
+    <rect width="150" height="235" rx="12" fill="#1e293b" stroke="#f472b6" stroke-width="1.5"/>
+    <rect width="150" height="38" rx="12" fill="url(#gfxGrad)"/>
+    <rect x="0" y="24" width="150" height="14" fill="url(#gfxGrad)"/>
+    <text x="75" y="24" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" text-anchor="middle">5. Raylib Render</text>
+    
+    <text x="12" y="65" fill="#f472b6" font-family="monospace" font-size="11" font-weight="bold">OpenGL Display</text>
+    <text x="12" y="85" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• 60 FPS Anti-aliased</text>
+    <text x="12" y="102" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• Concentric wavefronts</text>
+    <text x="12" y="119" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">• Mach cone tangents</text>
+    
+    <line x1="12" y1="135" x2="138" y2="135" stroke="#334155" stroke-width="1"/>
+    
+    <text x="12" y="155" fill="#facc15" font-family="monospace" font-size="9">Overlays:</text>
+    <text x="12" y="172" fill="#94a3b8" font-family="monospace" font-size="9">Mach Meter HUD</text>
+    <text x="12" y="187" fill="#94a3b8" font-family="monospace" font-size="9">Velocity Vector</text>
+    <text x="12" y="202" fill="#94a3b8" font-family="monospace" font-size="9">Telemetry Status</text>
+    <text x="75" y="225" fill="#f472b6" font-family="-apple-system, sans-serif" font-size="9" text-anchor="middle" font-style="italic">Sub-16ms Latency</text>
+  </g>
+
+  <!-- Bottom Legend Banner -->
+  <g transform="translate(40, 305)">
+    <rect width="920" height="36" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <circle cx="30" cy="18" r="6" fill="#38bdf8"/>
+    <text x="45" y="22" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">Physical &amp; Serial Layer</text>
+
+    <circle cx="230" cy="18" r="6" fill="#2dd4bf"/>
+    <text x="245" y="22" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">Firmware ADC Sampling</text>
+
+    <circle cx="430" cy="18" r="6" fill="#c084fc"/>
+    <text x="445" y="22" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">Thread-Safe Ingestion</text>
+
+    <circle cx="630" cy="18" r="6" fill="#fbbf24"/>
+    <text x="645" y="22" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">Object-Oriented Physics Engine</text>
+
+    <circle cx="830" cy="18" r="6" fill="#f472b6"/>
+    <text x="845" y="22" fill="#cbd5e1" font-family="-apple-system, sans-serif" font-size="10">Raylib GPU Visualizer</text>
+  </g>
+</svg>
