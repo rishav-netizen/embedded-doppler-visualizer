@@ -8,10 +8,14 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Include header directory
 include_directories(include)
 
+# Find POSIX Threads library for background serial worker
+find_package(Threads REQUIRED)
+
 # Source files
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 add_executable(doppler_visualizer ${SOURCES})
+target_link_libraries(doppler_visualizer PRIVATE Threads::Threads)
 
 # Raylib dependency
 find_package(raylib QUIET)
